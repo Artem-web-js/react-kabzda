@@ -1,0 +1,49 @@
+import React, {useState} from "react";
+import s from './OnOff.module.css'
+
+type OnOffType = {
+    // on: boolean
+}
+
+const OnOff = (props: OnOffType) => {
+
+    let [on, setOn] = useState(false)
+
+    const onBlock = {
+        width: "40px",
+        height: "20px",
+        marginTop: "10px",
+        border: "2px solid black",
+        display: "inline-block",
+        backgroundColor: on ? "green" : "white"
+    }
+    const offBlock = {
+        width: "40px",
+        height: "20px",
+        marginTop: "10px",
+        marginLeft: "-1px",
+        border: "2px solid black",
+        display: "inline-block",
+        backgroundColor: !on ? "red" : "white"
+    }
+    const circle = {
+        width: "10px",
+        height: "10px",
+        marginTop: "10px",
+        verticalAlign: "baseline",
+        marginLeft: "5px",
+        borderRadius: "50%",
+        border: "2px solid black",
+        display: "inline-block",
+        backgroundColor: on ? "green" : "red"
+    }
+    return (
+        <div>
+            <div style={onBlock} onClick={() => {setOn(true)}}>On</div>
+            <div style={offBlock} onClick={() => {setOn(false)}}>Off</div>
+            <div style={circle}></div>
+        </div>
+    )
+}
+
+export default OnOff;
