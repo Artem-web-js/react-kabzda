@@ -3,11 +3,12 @@ import s from './UncontrolledOnOff.module.css'
 
 type OnOffType = {
     onChange: (on: boolean) => void
+    defaultOn?: boolean
 }
 
-const UncontrolledOnOff = (props: OnOffType) => {
+export const UncontrolledOnOff = (props: OnOffType) => {
 
-    let [on, setOn] = useState(false)
+    let [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
 
     const onBlock = {
         width: "40px",
@@ -55,5 +56,3 @@ const UncontrolledOnOff = (props: OnOffType) => {
         </div>
     )
 }
-
-export default UncontrolledOnOff;

@@ -2,7 +2,6 @@ import React, {useState} from "react";
 
 type AccordionType = {
     titleValue: string
-    // collapsed: boolean
 }
 
 type AccordionTitleType = {

@@ -6,7 +6,7 @@ type OnOffType = {
     onClick: (on: boolean) => void
 }
 
-const OnOff = (props: OnOffType) => {
+export const OnOff = (props: OnOffType) => {
 
     const onBlock = {
         width: "40px",
@@ -44,5 +44,3 @@ const OnOff = (props: OnOffType) => {
         </div>
     )
 }
-
-export default OnOff;
