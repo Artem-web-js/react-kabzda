@@ -8,14 +8,14 @@ type AccordionType = {
 
 type AccordionTitleType = {
     title: string
-    onClick: (collapsed: boolean) => void
     collapsed: boolean
+    onClick: (collapsed: boolean) => void
 }
 
 export function Accordion(props: AccordionType) {
     return (
         <div>
-            <AccordionTitle title={props.titleValue} onClick={props.onClick}/>
+            <AccordionTitle title={props.titleValue} onClick={props.onClick} collapsed={!props.collapsed}/>
             {!props.collapsed && <AccordionBody/>}
         </div>
     )

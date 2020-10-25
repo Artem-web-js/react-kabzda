@@ -3,10 +3,10 @@ import React from "react";
 type StarType = {
     selected: boolean
     onClick: (value: RatingValueType) => void
-    value:  1 | 2 | 3 | 4 | 5
+    value: RatingValueType
 }
 
-export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
+export type RatingValueType = 0|1|2|3|4|5;
 
 type RatingType = {
     value: RatingValueType
@@ -26,7 +26,5 @@ export function Rating(props: RatingType) {
 }
 
 function Star(props: StarType) {
-    return <span onClick={() => {props.onClick(props.value)}}>
-        {props.selected === true ? <b>star </b> : "star "}
-    </span>
+    return <span onClick={() => {props.onClick(props.value)}}>{props.selected ? <b>star </b> : "star "}</span>
 }
