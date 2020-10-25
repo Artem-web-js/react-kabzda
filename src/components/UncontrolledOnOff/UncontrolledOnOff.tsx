@@ -1,12 +1,13 @@
-import React from "react";
-import s from './OnOff.module.css'
+import React, {useState} from "react";
+import s from './UncontrolledOnOff.module.css'
 
 type OnOffType = {
-    on: boolean
-    onClick: (on: boolean) => void
+    onChange: (on: boolean) => void
 }
 
-const OnOff = (props: OnOffType) => {
+const UncontrolledOnOff = (props: OnOffType) => {
+
+    let [on, setOn] = useState(false)
 
     const onBlock = {
         width: "40px",
@@ -14,7 +15,7 @@ const OnOff = (props: OnOffType) => {
         marginTop: "10px",
         border: "2px solid black",
         display: "inline-block",
-        backgroundColor: props.on ? "green" : "white"
+        backgroundColor: on ? "green" : "white"
     }
     const offBlock = {
         width: "40px",
@@ -23,7 +24,7 @@ const OnOff = (props: OnOffType) => {
         marginLeft: "-1px",
         border: "2px solid black",
         display: "inline-block",
-        backgroundColor: !props.on ? "red" : "white"
+        backgroundColor: !on ? "red" : "white"
     }
     const circle = {
         width: "10px",
@@ -34,15 +35,25 @@ const OnOff = (props: OnOffType) => {
         borderRadius: "50%",
         border: "2px solid black",
         display: "inline-block",
-        backgroundColor: props.on ? "green" : "red"
+        backgroundColor: on ? "green" : "red"
     }
+
+    const onClicked = () => {
+        setOn(true)
+        props.onChange(true)
+    }
+    const offClicked = () => {
+        setOn(false)
+        props.onChange(false)
+    }
+
     return (
         <div>
-            <div style={onBlock} onClick={() => {props.onClick(true)}}>On</div>
-            <div style={offBlock} onClick={() => {props.onClick(false)}}>Off</div>
+            <div style={onBlock} onClick={onClicked}>On</div>
+            <div style={offBlock} onClick={offClicked}>Off</div>
             <div style={circle}></div>
         </div>
     )
 }
 
-export default OnOff;
+export default UncontrolledOnOff;
