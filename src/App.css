@@ -1,3 +1,56 @@
 .App {
   margin: 20px;
 }
+
+.mainBlock {
+  position: relative;
+}
+
+.select {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  width: 120px;
+  height: 35px;
+  border: 2px solid lightslategrey;
+}
+
+.selectIcon {
+  position: absolute; /* Абсолютное позиционирование */
+  right: 5px; top: 10px; /* Положение треугольника */
+  border: 8px solid transparent; /* Прозрачные границы */
+  border-top: 8px solid grey; /* Добавляем треугольник */
+  transition-duration: .3s;
+}
+
+.selectIconRotate {
+  transform: rotate(180deg);
+  border-top: 8px solid blue;
+  top: 5px;
+  transition-duration: .3s;
+}
+
+.optionItems {
+  width: 100px;
+  position: absolute;
+  top: 40px;
+  left: 30px;
+}
+
+.items {
+  padding-left: 10px;
+  border-left: 2px solid grey;
+}
+
+.items:hover {
+  width: inherit;
+  background-color: #e2e2e2;
+  margin-left: 5px;
+  padding-left: 15px;
+  color: black;
+  font-size: 18px;
+  transition-duration: .5s;
+}
