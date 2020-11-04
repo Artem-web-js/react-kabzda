@@ -28,7 +28,16 @@ function App() {
             <Rating value={5}/>*/}
             {/*<UncontrolledRating/>*/}
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Accordion titleValue="Menu" collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            <Accordion titleValue="Menu"
+                       onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+                       items={[
+                           {title: "Artem", value: 1},
+                           {title: "Nikolay", value: 2},
+                           {title: "Vladislav", value: 3},
+                           {title: "Ignat", value: 4}
+                       ]}
+                       collapsed={accordionCollapsed}
+                       onClick={setAccordionCollapsed}/>
             <UncontrolledOnOff onChange={setOn}/>{on.toString()}
             {/*<OnOff on={on} onClick={setOn}/>*/}
             {/*<UncontrolledAccordion titleValue="Menu"/>*/}
