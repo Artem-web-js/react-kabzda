@@ -9,7 +9,7 @@ export default {
 
 const callback = action('accordion changed event fired');
 
-export const AccordionChanged = () => {
+export const AccordionChanged = React.memo(() => {
     return <UncontrolledAccordion titleValue="Menu"/>
-};
+});
 

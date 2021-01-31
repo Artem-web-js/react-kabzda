@@ -7,7 +7,7 @@ export default {
     component: Select
 };
 
-export const SelectChanged = () => {
+export const SelectChanged = React.memo(() => {
 
     const [selectValue, setSelectValue] = useState<string>('enter value');
     const [selected, setSelected] = useState(false);
@@ -35,4 +35,4 @@ export const SelectChanged = () => {
             />
         </div>
     )
-}
+})

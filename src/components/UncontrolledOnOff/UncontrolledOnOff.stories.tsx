@@ -9,10 +9,10 @@ export default {
 
 const callback = action('on or off clicked');
 
-export const OnMode = () => {
+export const OnMode = React.memo(() => {
     return <UncontrolledOnOff defaultOn={true} onChange={callback}/>
-};
-export const OffMode = () => {
+});
+export const OffMode = React.memo(() => {
     return <UncontrolledOnOff defaultOn={false} onChange={callback}/>
-};
+});
 

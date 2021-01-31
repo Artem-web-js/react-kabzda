@@ -6,13 +6,13 @@ import {OnOff} from './components/OnOff/OnOff';
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import Clock from "./components/useEffect/useEffect";
 
 function App() {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true);
     let [on, setOn] = useState(false)
-
     return (
         <div className="App">
             {/*<PageTitle title="This is APP component"/>
@@ -42,6 +42,7 @@ function App() {
             {/*<OnOff on={on} onClick={setOn}/>*/}
             {/*<UncontrolledAccordion titleValue="Menu"/>*/}
             {/*<UncontrolledAccordion titleValue="Check-list"/>*/}
+            <Clock/>
         </div>
     );
 }
