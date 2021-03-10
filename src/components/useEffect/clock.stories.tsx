@@ -6,6 +6,6 @@ export default {
     component: Clock
 }
 
-export const BAseExample = () => {
+export const BaseExample = () => {
     return <Clock/>
 }
